@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+Blog
+{% endblock page_title %}
+
+{% block content %}
+
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-3">
+            <!--menu-->
+            {% include "algorithms/partials/_categories.html" %}
+        </div>
+        <div class="col-9">
+            <!--content-->
+            <h1>Blog Screen</h1>
+        </div>
+    </div>
+</div>
+
+
+
+{% endblock content %}
+
+

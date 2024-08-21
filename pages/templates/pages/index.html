@@ -1,0 +1,56 @@
+{% extends "layout.html" %}
+{% load static %}
+
+{% block page_title %}
+Home
+{% endblock page_title %}
+
+
+
+{% block own_css_files %}
+<style>
+   body {
+    margin: 0;
+    padding: 0;
+    background-color: #FDF7E4;
+    background-image: url('{% static "img/pixelcut-export.png" %}');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+    .col-12 {
+        height: 90vh; 
+        display: flex; 
+        justify-content: center; 
+        align-items: center; 
+    }
+    button{
+        padding: 20px; 
+        font-size: 1.5rem;
+        background-color: black; /* Set button background color to black */
+        color: white; /* Set text color to white */
+        border: none; /* Remove button border */
+    }
+</style>
+{% endblock own_css_files %}
+
+
+{% block content %}
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-12">
+            <!--content-->
+            <button id="calculateButton" type="button" class="btn btn-warning btn-lg" style="background-color: black; color: white; padding: 20px 40px; border-radius: 10px; border: none; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">Calculate Right Now !</button>
+        </div>
+    </div>
+</div>
+
+<script>
+    // Butona tıklama olayı ekleme
+    document.getElementById("calculateButton").addEventListener("click", function() {
+        // Belirtilen URL'ye yönlendirme
+        window.location.href = "/checkcreditrisk";
+    });
+</script>
+{% endblock content %}
+

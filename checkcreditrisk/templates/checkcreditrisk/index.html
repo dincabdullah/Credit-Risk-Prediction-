@@ -1,0 +1,226 @@
+{% extends "layout.html" %}
+
+{% load static %}
+
+{% block page_title %}
+
+Check Your Credit Risk
+
+{% endblock page_title %}
+
+{% block own_css_files %}
+    
+    <style>
+
+        .result-text {
+            font-family: Arial, sans-serif;
+            font-size: 32px;
+            color:white;
+            text-align:center;
+        }
+
+    </style>
+
+{% endblock own_css_files %}
+
+{% block content %}
+
+<div class="container mt-4">
+    <div class="row">
+
+        <div class="col-4">
+
+        </div>
+
+        <div class="col-4">
+            <!--content-->
+            <form action="{% url 'check_credit_risk_index_page_link' %}" method = "POST">
+
+                {% csrf_token %}
+
+                <!--Age-->
+                <div class="mb-3">
+                    <label for="age" class="form-label">Age</label>
+                    <input type="text" name="age" class = "form-control">
+                </div>
+
+                <!--Job-->
+                {% comment %} <div class="mb-3">
+                    <label for="job" class="form-label">Job</label>
+                    <input type="text" name="job" class = "form-control">
+                </div> {% endcomment %}
+                <!--Job-->
+
+                <!--Job-->
+                <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" name = "job">
+                    <option selected>Select Job Class</option>
+                    <option value="0">Zero</option>
+                    <option value="1">One</option>
+                    <option value="2">Two</option>
+                    <option value="3">Three</option>
+                </select>
+                <!--Job-->
+
+                <!--Gender-->
+                {% comment %} <div class="mb-3">
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="gender">
+                        <label class="form-check-label" for="gender">
+                          Male
+                        </label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="gender">
+                        <label class="form-check-label" for="gender">
+                          Female
+                        </label>
+                    </div>
+                </div> {% endcomment %}
+                <!--Gender-->
+
+                <!--Gender-->
+                <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" name = "gender">
+                    <option selected>Select Gender</option>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                </select>
+                <!--Gender-->
+                
+
+                 
+
+                <!--Housing-->
+                {% comment %} <div class="mb-3">
+                    <label class="form-label">Housing : </label>
+
+                    <input type="radio" class="btn-check" name="housing" id="own" checked>
+                    <label class="btn" for="own">Own</label>
+                    <input type="radio" class="btn-check" name="housing" id="free">
+                    <label class="btn " for="free">Free</label>
+                    <input type="radio" class="btn-check" name="housing" id="rent">
+                    <label class="btn" for="rent">Rent</label>
+                </div> {% endcomment %}
+                <!--Housing-->
+
+
+                <!--Housing-->
+                <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" name = "housing">
+                    <option selected>Select Housing</option>
+                    <option value="own">Own</option>
+                    <option value="free">Free</option>
+                    <option value="rent">Rent</option>
+                </select>
+                <!--Housing-->
+
+
+                <!--Purpose-->
+                {% comment %} <div class="mb-3">
+                    <label class="form-label">Purpose : </label>
+
+                    <input type="radio" class="btn-check" name="purpose" id="radio" checked>
+                    <label class="btn" for="radio">Radio/TV</label>
+                    <input type="radio" class="btn-check" name="purpose" id="education">
+                    <label class="btn " for="education">Education</label>
+                    <input type="radio" class="btn-check" name="purpose" id="furniture">
+                    <label class="btn" for="furniture">Furniture Equipment</label>
+                    <input type="radio" class="btn-check" name="purpose" id="car">
+                    <label class="btn" for="car">Car</label>
+                    <input type="radio" class="btn-check" name="purpose" id="business">
+                    <label class="btn" for="business">Business</label>
+                    <input type="radio" class="btn-check" name="purpose" id="domestic">
+                    <label class="btn" for="domestic">Domestic Appliances</label>
+                    <input type="radio" class="btn-check" name="purpose" id="repairs">
+                    <label class="btn" for="repairs">Repairs</label>
+                    <input type="radio" class="btn-check" name="purpose" id="vacation">
+                    <label class="btn" for="vacation">Vacation/Others</label>
+                </div> {% endcomment %}
+                <!--Purpose-->
+
+
+                <!--Purpose-->
+                <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" name = "purpose">
+                    <option selected>Select Purpose</option>
+                    <option value="radio/TV">Radio/TV</option>
+                    <option value="education">Education</option>
+                    <option value="furniture/equipment">Furniture Equipment</option>
+                    <option value="car">Car</option>
+                    <option value="business">Business</option>
+                    <option value="domestic appliances">Domestic Appliances</option>
+                    <option value="repairs">Repairs</option>
+                    <option value="vacation/others">Vacation/Others</option>
+                </select>
+                <!--Purpose-->
+
+                <!--Saving Accounts-->
+                {% comment %} <div class="mb-3">
+                    <label for="savingaccounts" class="form-label">Saving Accounts</label>
+                    <input type="text" name="savingaccounts" class = "form-control">
+                </div> {% endcomment %}
+                <!--Saving Accounts-->
+
+                <!--Saving Accounts-->
+                <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" name = "savingaccounts">
+                    <option selected>Select Saving Accounts</option>
+                    <option value="little">0$ - 1000$</option>
+                    <option value="moderate">1000$ - 5000$</option>
+                    <option value="quite rich">5000$ - 10000$</option>
+                    <option value="rich">10000$ - ∞</option>
+                </select>
+                <!--Saving Accounts-->
+
+                <!--Checking Accounts-->
+                {% comment %} <div class="mb-3">
+                    <label for="checkingaccounts" class="form-label">Checking Accounts</label>
+                    <input type="text" name="checkingaccounts" class = "form-control">
+                </div> {% endcomment %}
+                <!--Checking Accounts-->
+
+                <!--Checking Accounts-->
+                <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" name = "checkingaccounts">
+                    <option selected>Select Checking Accounts</option>
+                    <option value="little">0$ - 1000$</option>
+                    <option value="moderate">1000$ - 5000$</option>
+                    <option value="quite rich">5000$ -  ∞</option>
+                </select>
+                <!--Checking Accounts-->
+
+                <!--Credit Amount-->
+                <div class="mb-3">
+                    <label for="creditamount" class="form-label">Credit Amount</label>
+                    <input type="text" name="creditamount" class = "form-control">
+                </div>
+
+                <!--Duration in Months-->
+                <div class="mb-3">
+                    <label for="duration" class="form-label">Duration in Months</label>
+                    <input type="text" name="duration" class = "form-control">
+                </div>
+
+                <button class= "btn btn-primary mb-3" type="submit">Send</button>
+
+                <!---->
+                {% comment %} <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" name= "VALLAHA GELDİ">
+                    <option selected>Open this select menu</option>
+                    <option value="1">One</option>
+                    <option value="2">Two</option>
+                    <option value="3">Three</option>
+                </select> {% endcomment %}
+                <!---->
+
+                <div class="mb-3">
+                    {% if isOk %}
+                        {% if risk == "Good" %}
+                            <p class="result-text" style="background-color:green;">Your Credit Risk is Good</p>
+                        {% else %}
+                            <p class="result-text" style="background-color:red;">Your Credit Risk is Bad</p>
+                        {% endif %}
+                    {% endif %}
+                </div>
+
+            </form>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}
+
